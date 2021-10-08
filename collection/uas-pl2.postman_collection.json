@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "d4d1d075-520f-4316-a43b-5b1bb8db3b75",
+		"name": "uas-pl2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getBuku",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{auth_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{route}}api/getBuku",
+					"host": [
+						"{{route}}api"
+					],
+					"path": [
+						"getBuku"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertAnggota",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{auth_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_anggota",
+							"value": "tes",
+							"type": "text"
+						},
+						{
+							"key": "jk_anggota",
+							"value": "Laki-laki",
+							"type": "text"
+						},
+						{
+							"key": "notelp_anggota",
+							"value": "08821968276",
+							"type": "text"
+						},
+						{
+							"key": "alamat_anggota",
+							"value": "Bogor Tengah",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{route}}api/insertAnggota",
+					"host": [
+						"{{route}}api"
+					],
+					"path": [
+						"insertAnggota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAnggota",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{auth_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{route}}api/getAnggota",
+					"host": [
+						"{{route}}api"
+					],
+					"path": [
+						"getAnggota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPeminjaman",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{auth_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{route}}api/getPeminjaman",
+					"host": [
+						"{{route}}api"
+					],
+					"path": [
+						"getPeminjaman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertPeminjaman",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{auth_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_buku",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_anggota",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tanggal_peminjaman",
+							"value": "2021-09-10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{route}}api/insertPeminjaman",
+					"host": [
+						"{{route}}api"
+					],
+					"path": [
+						"insertPeminjaman"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
