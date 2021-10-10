@@ -23,6 +23,8 @@ class Anggota extends CI_Controller {
 			'jk_anggota' => $this->input->post('jk_anggota'), 
 			'notelp_anggota' => $this->input->post('notelp_anggota'), 
 			'alamat_anggota' => $this->input->post('alamat_anggota'), 
+			'username' => $this->input->post('username'), 
+			'password' => sha1($this->input->post('password')), 
 		);
 		$proses = $this->db->insert('anggota', $data);
 		if ($proses) {
@@ -48,7 +50,9 @@ class Anggota extends CI_Controller {
 			'nama_anggota' => $this->input->post('nama_anggota'), 
 			'jk_anggota' => $this->input->post('jk_anggota'), 
 			'notelp_anggota' => $this->input->post('notelp_anggota'), 
-			'alamat_anggota' => $this->input->post('alamat_anggota'),
+			'alamat_anggota' => $this->input->post('alamat_anggota'), 
+			'username' => $this->input->post('username'), 
+			'password' => sha1($this->input->post('password')),
 		);
 		$proses = $this->db->update('anggota', $data, $where);
 		if ($proses) {

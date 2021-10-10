@@ -37,6 +37,14 @@
               <label>Alamat</label>
               <textarea name="alamat_anggota" class="form-control"></textarea>
             </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input name="username" class="form-control" required="">
+            </div>
+            <div class="form-group">
+              <label>Passsword</label>
+              <input name="password" class="form-control" type="password" required="">
+            </div>
             
             <center>
               <a href="<?= site_url('anggota') ?>" class="btn btn-danger">Kembali</a>
@@ -66,6 +74,15 @@
             <div class="form-group">
               <label>Alamat</label>
               <textarea name="alamat_anggota" class="form-control"><?= $data->alamat_anggota ?></textarea>
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input name="username" class="form-control" required="" value="<?= $data->username ?>">
+            </div>
+            <div class="form-group">
+              <label>Passsword</label>
+              <input name="password" class="form-control" type="password">
+              <small>*Kosongkan jika tidak diedit</small>
             </div>
             
             <center>
