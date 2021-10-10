@@ -43,7 +43,11 @@
                 <td><?= $r->penulis_buku ?></td>
                 <td><?= $r->penerbit_buku ?></td>
                 <td>
-                  <button class="btn btn-primary">Pinjam</button>
+                  <form action="<?= site_url('perpus/insertPesanan') ?>" method="post">
+                    <input type="hidden" name="id_buku" value="<?= $r->id_buku ?>" required="">
+                    <input type="hidden" name="id_anggota" value="<?= $this->session->userdata('id_anggota') ?>" required="">
+                    <input type="submit" class="btn btn-primary" value="Pinjam">
+                  </form>
                 </td>
               </tr>
               <?php $no++; } ?>
