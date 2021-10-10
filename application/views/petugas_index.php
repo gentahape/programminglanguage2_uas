@@ -29,6 +29,7 @@
                 <th>No Telp</th>
                 <th>Alamat</th>
                 <th>Username</th>
+                <th>Level</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -44,6 +45,7 @@
                 <td><?= $r->notelp_petugas ?></td>
                 <td><?= $r->alamat_petugas ?></td>
                 <td><?= $r->username ?></td>
+                <td><?= $r->level ?></td>
                 <td align="center">
                   <a href="<?= site_url('petugas/edit/'.$r->id_petugas) ?>" class="btn btn-warning">Edit</a> |
                   <a href="<?= site_url('petugas/delete/'.$r->id_petugas) ?>" class="btn btn-danger">Hapus</a>

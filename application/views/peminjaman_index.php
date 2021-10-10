@@ -19,7 +19,9 @@
           </div>
           <?php } ?>
   
+          <?php if ($this->session->userdata('level') == 'Petugas') { ?>
           <a href="<?= site_url('peminjaman/add') ?>" class="btn btn-primary">Tambah</a> <br><br>
+          <?php } ?>
   
           <table class="table align-items-center table-flush" id="dataTable">
             <thead class="thead-light">
@@ -28,7 +30,9 @@
                 <th>Judul Buku</th>
                 <th>Nama Anggota</th>
                 <th>Tanggal</th>
+                <?php if ($this->session->userdata('level') == 'Petugas') { ?>
                 <th>Aksi</th>
+                <?php } ?>
               </tr>
             </thead>
             <tbody>
@@ -42,10 +46,12 @@
                 <td><?= $r->judul_buku ?></td>
                 <td><?= $r->nama_anggota ?></td>
                 <td><?= $r->tanggal_peminjaman ?></td>
+                <?php if ($this->session->userdata('level') == 'Petugas') { ?>
                 <td align="center">
                   <a href="<?= site_url('peminjaman/edit/'.$r->id_peminjaman) ?>" class="btn btn-warning">Edit</a> |
                   <a href="<?= site_url('peminjaman/delete/'.$r->id_peminjaman) ?>" class="btn btn-danger">Hapus</a>
                 </td>
+                <?php } ?>
               </tr>
               <?php $no++; } ?>
 

@@ -25,7 +25,7 @@
       </a>
       <hr class="sidebar-divider my-0">
 
-      <?php if ($this->session->userdata('akses') == 'petugas') { ?>
+      <?php if ($this->session->userdata('level') == 'Petugas') { ?>
       <li class="nav-item <?= ($this->uri->segment(1) == 'buku' ? 'active' : '') ?>">
         <a class="nav-link" href="<?= site_url('buku') ?>">
           <i class="fas fa-fw fa-book"></i>
@@ -50,6 +50,19 @@
         <a class="nav-link" href="<?= site_url('petugas') ?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Petugas</span></a>
+      </li>
+      <?php } ?>
+
+      <?php if ($this->session->userdata('level') == 'Kepala') { ?>
+      <li class="nav-item <?= ($this->uri->segment(1) == 'buku' ? 'active' : '') ?>">
+        <a class="nav-link" href="<?= site_url('buku') ?>">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Laporan Data Buku</span></a>
+      </li>
+      <li class="nav-item <?= ($this->uri->segment(1) == 'peminjaman' ? 'active' : '') ?>">
+        <a class="nav-link" href="<?= site_url('peminjaman') ?>">
+          <i class="fas fa-fw fa-address-book"></i>
+          <span>Laporan Data Peminjaman</span></a>
       </li>
       <?php } ?>
 

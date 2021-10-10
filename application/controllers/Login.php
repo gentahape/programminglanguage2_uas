@@ -23,7 +23,7 @@ class Login extends CI_Controller {
 			
 			$session = array(
 				'login' => 1, 
-				'akses' => 'petugas', 
+				'level' => $cek->row()->level, 
 				'name' => $cek->row()->nama_petugas, 
 			);
 			$this->session->set_userdata($session);

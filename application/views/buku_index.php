@@ -19,7 +19,9 @@
           </div>
           <?php } ?>
   
+          <?php if ($this->session->userdata('level') == 'Petugas') { ?>
           <a href="<?= site_url('buku/add') ?>" class="btn btn-primary">Tambah</a> <br><br>
+          <?php } ?>
   
           <table class="table align-items-center table-flush" id="dataTable">
             <thead class="thead-light">
@@ -29,7 +31,9 @@
                 <th>Judul Buku</th>
                 <th>Penulis Buku</th>
                 <th>Penerbit Buku</th>
+                <?php if ($this->session->userdata('level') == 'Petugas') { ?>
                 <th>Aksi</th>
+                <?php } ?>
               </tr>
             </thead>
             <tbody>
@@ -44,10 +48,12 @@
                 <td><?= $r->judul_buku ?></td>
                 <td><?= $r->penulis_buku ?></td>
                 <td><?= $r->penerbit_buku ?></td>
+                <?php if ($this->session->userdata('level') == 'Petugas') { ?>
                 <td align="center">
                   <a href="<?= site_url('buku/edit/'.$r->id_buku) ?>" class="btn btn-warning">Edit</a> |
                   <a href="<?= site_url('buku/delete/'.$r->id_buku) ?>" class="btn btn-danger">Hapus</a>
                 </td>
+                <?php } ?>
               </tr>
               <?php $no++; } ?>
 

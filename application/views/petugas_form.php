@@ -30,6 +30,14 @@
               <textarea name="alamat_petugas" class="form-control"></textarea>
             </div>
             <div class="form-group">
+              <label>Level</label>
+              <select name="level" class="form-control" required="">
+                <option value="">Pilih Level</option>
+                <option value="Petugas">Petugas Perpustakaan</option>
+                <option value="Kepala">Kepala Perpustakaan</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label>Username</label>
               <input name="username" class="form-control" required="">
             </div>
@@ -58,6 +66,14 @@
             <div class="form-group">
               <label>Alamat</label>
               <textarea name="alamat_petugas" class="form-control"><?= $data->alamat_petugas ?></textarea>
+            </div>
+            <div class="form-group">
+              <label>Level</label>
+              <select name="level" class="form-control" required="">
+                <option value="">Pilih Level</option>
+                <option value="Petugas" <?= ($data->level == 'Petugas' ? 'selected' : '') ?>>Petugas Perpustakaan</option>
+                <option value="Kepala" <?= ($data->level == 'Kepala' ? 'selected' : '') ?>>Kepala Perpustakaan</option>
+              </select>
             </div>
             <div class="form-group">
               <label>Username</label>

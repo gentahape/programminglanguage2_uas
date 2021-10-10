@@ -33,6 +33,7 @@ class Petugas extends CI_Controller {
 			'alamat_petugas' => $this->input->post('alamat_petugas'), 
 			'username' => $this->input->post('username'), 
 			'password' => sha1($this->input->post('password')), 
+			'level' => $this->input->post('level'), 
 		);
 		$proses = $this->db->insert('petugas', $data);
 		if ($proses) {
@@ -61,6 +62,7 @@ class Petugas extends CI_Controller {
 				'notelp_petugas' => $this->input->post('notelp_petugas'), 
 				'alamat_petugas' => $this->input->post('alamat_petugas'), 
 				'username' => $this->input->post('username'), 
+				'level' => $this->input->post('level'), 
 			);
 		} else {
 			$data = array(
@@ -69,6 +71,7 @@ class Petugas extends CI_Controller {
 				'alamat_petugas' => $this->input->post('alamat_petugas'), 
 				'username' => $this->input->post('username'), 
 				'password' => sha1($this->input->post('password')), 
+				'level' => $this->input->post('level'), 
 			);
 		}
 
