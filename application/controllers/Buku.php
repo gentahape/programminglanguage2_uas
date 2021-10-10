@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Buku extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		if ($this->session->userdata('login') == 0) {
+			$this->session->set_flashdata('gagal', 'Anda harus login');
+			redirect('login');
+		}
+	}
+
 	public function index()
 	{
 		$data['view'] = 'buku_index';
