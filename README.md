@@ -1,8 +1,7 @@
-# programminglanguage2_uas
-Programming Language UAS
+# Aplikasi Perpustakaan
+
+Aplikasi menggunakan framework CodeIgniter
 
 kuliah_pl2_uas.sql adalah databasenya
 
-Folder collection adalah collection API
-
-Folder web-base adalah halaman untuk hak akses PETUGAS dan API
+Setting database di application/config/database.php
