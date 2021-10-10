@@ -40,7 +40,12 @@
                   </div>
                   <?php } ?>
 
-                  <form class="user" action="<?= site_url('login/loginPetugas') ?>" method="post">
+                  <?php if ($this->uri->segment(2) == 'petugas') { ?>
+                    <form class="user" action="<?= site_url('login/cekPetugas') ?>" method="post">
+                  <?php }elseif ($this->uri->segment(2) == 'anggota') { ?>
+                    <form class="user" action="<?= site_url('login/cekAnggota') ?>" method="post">
+                  <?php } ?>
+
                     <div class="form-group">
                       <input type="text" class="form-control" required="" name="username" placeholder="Masukan Username">
                     </div>
@@ -51,6 +56,7 @@
                       <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                   </form>
+
                 </div>
               </div>
             </div>

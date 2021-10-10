@@ -20,10 +20,12 @@
 
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= site_url() ?>">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="javascript:void(0)">
         <div class="sidebar-brand-text mx-3">Peminjaman Buku</div>
       </a>
       <hr class="sidebar-divider my-0">
+
+      <?php if ($this->session->userdata('akses') == 'petugas') { ?>
       <li class="nav-item <?= ($this->uri->segment(1) == 'buku' ? 'active' : '') ?>">
         <a class="nav-link" href="<?= site_url('buku') ?>">
           <i class="fas fa-fw fa-book"></i>
@@ -39,11 +41,18 @@
           <i class="fas fa-fw fa-address-book"></i>
           <span>Peminjaman Buku</span></a>
       </li>
+      <li class="nav-item <?= ($this->uri->segment(1) == 'tamu' ? 'active' : '') ?>">
+        <a class="nav-link" href="<?= site_url('tamu/table') ?>">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Daftar Tamu</span></a>
+      </li>
       <li class="nav-item <?= ($this->uri->segment(1) == 'petugas' ? 'active' : '') ?>">
         <a class="nav-link" href="<?= site_url('petugas') ?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Petugas</span></a>
       </li>
+      <?php } ?>
+
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin" hidden=""></div>
     </ul>
@@ -58,11 +67,12 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
+            <?php if ($this->session->userdata('login') > 0) { ?>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="<?= base_url() ?>assets/img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Administrator</span>
+                <span class="ml-2 d-none d-lg-inline text-white small"><?= $this->session->userdata('name') ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="<?= site_url('login/logout') ?>">
@@ -71,6 +81,8 @@
                 </a>
               </div>
             </li>
+            <?php } ?>
+
           </ul>
         </nav>
         <!-- Topbar -->

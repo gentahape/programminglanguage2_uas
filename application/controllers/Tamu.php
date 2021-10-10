@@ -10,9 +10,16 @@ class Tamu extends CI_Controller {
 
 	public function table()
 	{
-		$data['view'] = 'tamu_index';
-		$data['data'] = $this->db->order_by('id_tamu','DESC')->get('tamu')->result();
-		$this->load->view('template',$data);
+		
+		if ($this->session->userdata('login') == 0) {
+			$this->session->set_flashdata('gagal', 'Anda harus login');
+			redirect('login');
+		}else{
+			$data['view'] = 'tamu_table';
+			$data['data'] = $this->db->order_by('id_tamu','DESC')->get('tamu')->result();
+			$this->load->view('template',$data);
+		}
+
 	}
 
 	public function insert()
@@ -23,8 +30,8 @@ class Tamu extends CI_Controller {
 		);
 		$proses = $this->db->insert('tamu', $data);
 		if ($proses) {
-			$this->session->set_flashdata('sukses', 'Proses Berhasil');
-			redirect('tamu');
+			$this->session->set_flashdata('sukses', 'Selamat datang');
+			redirect('umum');
 		} else {
 			$this->session->set_flashdata('gagal', 'Proses Gagal');
 			redirect('tamu');
