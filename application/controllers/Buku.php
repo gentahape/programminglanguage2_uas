@@ -8,7 +8,7 @@ class Buku extends CI_Controller {
 		parent::__construct();
 		if ($this->session->userdata('login') == 0) {
 			$this->session->set_flashdata('gagal', 'Anda harus login');
-			redirect('login');
+			redirect('login/petugas');
 		}
 	}
 

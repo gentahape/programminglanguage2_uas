@@ -54,10 +54,11 @@ class Login extends CI_Controller {
 			$session = array(
 				'login' => 1, 
 				'akses' => 'anggota', 
+				'id_anggota' => $cek->row()->id_anggota, 
 				'name' => $cek->row()->nama_anggota, 
 			);
 			$this->session->set_userdata($session);
-			redirect('buku');
+			redirect('perpus');
 
 		}
 		

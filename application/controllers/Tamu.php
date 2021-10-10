@@ -13,7 +13,7 @@ class Tamu extends CI_Controller {
 		
 		if ($this->session->userdata('login') == 0) {
 			$this->session->set_flashdata('gagal', 'Anda harus login');
-			redirect('login');
+			redirect('login/petugas');
 		}else{
 			$data['view'] = 'tamu_table';
 			$data['data'] = $this->db->order_by('id_tamu','DESC')->get('tamu')->result();
